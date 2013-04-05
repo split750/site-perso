@@ -1,0 +1,133 @@
+//------------------//
+//   Navigation     //
+//------------------//
+
+.nav {
+    ul { margin-bottom: 0; }
+    li {
+        position: relative;
+        float: left;
+        text-align: center;
+
+        a { display: inline-block; }
+    }
+}
+
+.header.nav {
+
+    li {
+        width: 17.58%;
+        height: 80px;
+        line-height: 80px;
+        border-right: 1px solid #d2d3d5;
+
+        &:first-of-type { width: 118px; }
+        &.last { border-right: none; }
+
+        &:hover, &:focus {
+            background-color: #898787;
+            a { color: #fff; }
+        } 
+        &.active {
+            background-color: #eee;
+            a { color: #58595b; }
+        }
+
+        a { 
+            width: 100%;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 18px;
+            color: #58595b;
+            vertical-align: middle;
+
+            span { 
+                display: block; 
+                text-transform: lowercase; 
+                font-size: 13px;
+                line-height: 18px;
+                font-style: italic;
+            }
+        }
+    }
+}
+
+
+
+.footer.nav {
+    ul { display: inline-block; }
+    li {
+        a {
+            padding: 0 10px;
+            line-height: 14px;
+            border-right: 2px solid #58595b;
+
+            &.last { border: none; }
+        }
+    }
+}
+
+.subnav.nav {
+    margin-top: 10px;
+    
+    li {
+        display: block;
+        padding: 0 6px;
+
+        .quisommesnous & {
+            width: 20%;
+            padding: 0 5px;
+        }
+
+        &.first { padding-left: 0; }
+        &.last { padding-right: 0; }
+    }
+
+    .button.black {
+        width: 100%;
+        font-size: 14px;
+        margin: 0;
+        padding: 8px 5px;
+
+        &.active {
+            background-color: #eee;
+            color: #58595b;
+            border-color: #eee;
+        }
+    }
+}
+
+.subnav.nav.no-proportional .button.black { padding: 8px 50px; }
+
+
+.subsubnav {
+    li {
+        @extend .border-bottom;
+        margin-bottom: 10px;
+
+        a { 
+            @extend .h3;
+            display: block;
+            width: 116%;
+            margin: 0 -8%;
+            padding: 6px 20px; 
+            font-size: 14px;
+            text-decoration: none;
+            @include border-radius(2px);
+        }
+
+        &.active a, &:hover a, &:focus a { background-color: #eee; }
+    }
+}
+
+.breadcrum.nav {
+    li:after { content: '>'; padding: 0 6px; }
+    
+    li.active {
+        a { color: #231f20; text-decoration: none; }
+        &:after { content: none; }
+    }
+    a { color: #58595b; }
+}
+

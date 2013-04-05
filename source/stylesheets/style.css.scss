@@ -1,0 +1,460 @@
+@import 'compass'; //utilisation des mixins
+// ex : @include border-radius(5px);
+
+// CSS du design ici.
+
+// color 
+
+$jaune: #fff02a;
+$gris-clair: #d2d3d5;
+
+
+
+// formatting 
+
+.row {
+    position: relative;
+    width: 61.250em; /*surcharge foundation */
+    border-left: 1px solid $gris-clair;
+    border-right: 1px solid $gris-clair;
+
+    &.no-padding { padding: 0; }
+    &.no-margin-bottom { margin-bottom: 0; }
+    &.no-margin { margin: 0; }
+}
+
+.padding { padding: 30px; }
+.padding-bottom { padding-bottom: 30px;}
+
+.container {
+    border-bottom: 1px solid $gris-clair;
+
+    .padding { padding: 30px; }
+}
+
+.border-center {
+    border-left: 1px solid $gris-clair;
+    border-right: 1px solid $gris-clair;
+}
+.border-bottom { 
+    border-bottom: 1px solid $gris-clair; 
+    margin-bottom: 30px; 
+    padding-bottom: 10px;
+}
+.border-right { border-right: 1px solid $gris-clair; }
+.border-left { border-left: 1px solid $gris-clair; }
+.no-border { border: none; }
+
+.columns.first { padding-left: 0; }
+.columns.last { padding-right: 0; }
+.columns.no-padding { padding: 0; }
+
+.centered.columns, .centered.columns:last-child {
+    float: none;
+    margin: 0 auto;
+}
+
+
+
+// base style
+
+body {
+    font-family: "myriad-pro";
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .h7 {
+    font-family: "myriad-pro";
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #231f20;
+    font-weight: normal;
+}
+
+h1, .h1 {
+    margin: 0;
+}
+
+h2, .h2 {
+    font-size: 18px;
+    line-height: 20px;
+    color: #020001;
+}
+
+h3, .h3 {
+    font-size: 16px;
+    line-height: 19px;
+}
+
+h4, .h4 {
+    margin-bottom: 0;
+    font-size: 24px;
+    span {
+        display: block;
+        font-size: 18px;
+    }
+}
+
+h5, .h5 {
+    display: inline;
+    font-size: 16px;
+    color: #58595b;
+
+    &:after { content: ' : '; }
+}
+
+h6, .h6 {
+    font-size: 14px;
+    line-height: 14px;
+    color: #58595b;
+    text-transform: none;
+
+    &:after { content: ''; }
+}
+
+
+p, a {
+    font-size: 14px;
+    line-height: 24px;
+    color: #58595b;
+    margin-bottom: 0;
+}
+p.margin-bottom { margin-bottom: 1.25em; }
+.justify { text-align: justify; }
+
+b { font-weight: normal; color: #020001; }
+
+a { 
+    color: #020002;
+    text-decoration: underline;
+    &:hover, &:focus { color: #898787; }
+    &:active { text-decoration: none; }
+}
+a.invert {
+    text-decoration: none;
+    &:hover, &:focus, &:hover p, &:focus p { 
+        color: #898787; 
+        text-decoration: underline; 
+    }
+}
+
+hr {
+    border: solid #020001;
+    border-width: 3px 0 0;
+    margin-top: 0;
+}
+
+li { list-style-type: none; }
+
+.bg-grey {
+    background-color: #eee;
+}
+
+.button {
+    @include border-radius(2px);
+    border-color: #777;
+    font-weight: normal;
+    text-transform: uppercase;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+    &:active { text-decoration: underline; }
+
+    &.yellow {
+        background-color: $jaune;
+        color: #231f20;
+    }
+
+    &.black {
+        background-color: #231f20;
+        color: #fff;
+
+        &:hover, &:focus {
+            background-color: #898787;
+            color: #fff;
+        }
+    }
+
+    &.arrow { 
+        height: 40px;
+        padding: 10px 70px 10px 50px;
+        font-size: 18px;
+        background: url('/images/bg-button-black.png') #231f20 center right no-repeat;
+        
+        &.grey { 
+            border-color: #eee;
+            background: url('/images/bg-button-grey-arrow.png') #eee center right no-repeat;
+
+            &:hover, &:focus { background-color: #231f20; }
+        }
+    }
+
+    &.submit {
+        position: relative;
+        top: -1px;
+        margin-bottom: 0;
+        padding: 6px 18px;
+        font-size: 15px;
+        border: none;
+    }
+}
+
+
+input {
+    &:focus, &:active { 
+        outline: none;
+    }
+}
+
+blockquote {
+    position: relative;
+    @extend .bg-grey;
+    padding-bottom: 0.5625em;
+    p { font-style: italic; line-height: 16px; }
+    footer {
+        &:before { 
+            position: absolute;
+            bottom: 18px;
+            left: 20px;
+            content: '';
+            width: 14px;
+            height: 1px;
+            background-color: #020001;
+        }
+        p { padding-left: 24px;font-style: normal; color: #020001; line-height: 20px; }
+    }
+}
+
+
+.list-style-dash {
+    .quisommesnous & { margin-top: 30px; }
+
+    li { 
+        position: relative;
+        margin: 10px 0;
+        padding-left: 24px;
+
+        &:before {
+            position: absolute;
+            top: 13px;
+            left: 0;
+            content: '';
+            width: 14px;
+            height: 2px;
+            background-color: #000;
+        } 
+    }
+    a, li { line-height: 16px; }
+}
+
+.list-style-dotted {
+
+    li {
+        position: relative;
+        padding-left: 60px;
+        &:before { 
+            content: '.'; 
+            position: absolute; 
+            top: -1px; 
+            left: 25px;
+            font-size: 26px;
+            line-height: 12px;
+        }
+    }
+}
+
+
+figure.large {
+    width: 136px;
+    height: 136px;
+    margin: 10px auto 30px;
+}
+
+
+table {
+    border: none;
+    width: 100%;
+
+    tr.odd, tr.alt, tr:nth-of-type(odd) { background-color: #eee; }
+    tr.even, tr:nth-of-type(even) { background-color: #fff; }
+
+    td:nth-of-type(odd) { border-right: 1px solid #fff; }
+
+    tr th, tr td { padding: 10px 30px; vertical-align: top; }
+}
+
+
+// Header
+
+@import "header.scss";
+
+
+// menu
+
+@import "navigation.scss";
+
+
+// homapage - landing
+
+.landing {
+    width: 918px;
+    height: 400px;
+    background: url('/images/bg-landing.jpg') center center no-repeat;
+}
+
+.caption {
+    width: 56%;
+    height: 400px;
+    margin: 0 auto;
+    padding: 70px 30px;
+    background-color: #222;
+    background-color: rgba(#000, 0.6);
+    text-align: center;
+
+    h1 { 
+        font-size: 32px;
+        margin-bottom: 20px; 
+    }
+
+    h3 {
+        font-size: 12px;
+        font-weight: normal;
+        color: $jaune;
+    }
+    h1, p {
+        font-weight: normal;
+        color: #fff;
+    }
+    p {
+        font-size: 14px; 
+        line-height: 20px;
+    }
+    .button {
+        padding: 7px 20px;
+        margin: 20px 0;
+    }
+}
+
+
+figure.small {
+    width: 82px;
+    height: 82px;
+    margin: 0 auto 20px;
+    &.info { background: url('/images/picto-info.png') center center no-repeat; }
+    &.link { background: url('/images/picto-link.png') center center no-repeat; }
+    &.person { background: url('/images/picto-person.png') center center no-repeat; }
+    &.mail { background: url('/images/picto-mail.png') center center no-repeat; }
+}
+
+
+.presentation-coach, .equipe { 
+    .photo {
+        float: left;
+        width: 102px;
+        height: 122px;
+        margin: 0 20px 10px 0;
+        background: url('/images/photo-coach-effect.png') bottom right no-repeat;
+        border: 1px solid $gris-clair;
+    }
+    .title {
+        padding-top: 37px;
+        margin-bottom: 10px;
+
+        h5:after { content: none; }
+    }
+}
+.presentation-coach p { font-style: italic; font-size: 13px; }
+
+
+
+.banner-cap-idc {
+    width: 918px;
+    height: 140px;
+    background: url('/images/bg-banner-cap-idc.jpg') center center no-repeat;
+
+    h1 {
+        margin: 0;
+        padding-top: 30px;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 26px;
+    }
+    h2 {
+        text-transform: none;
+        font-size: 15px;
+    }
+}
+
+
+
+.slider {
+
+    .left-button {
+        //width: 11px;
+        height: 60px;
+        background: url('/images/slider-left-button.png') right center no-repeat;
+    }
+    .right-button {
+        //width: 11px;
+        height: 60px;
+        background: url('/images/slider-right-button.png') left center no-repeat;
+    }
+}
+
+
+
+.newsletter {
+    figure { margin-bottom: 0; }
+    form {
+        margin: 30px 0 0;
+
+        input[type='mail']{
+            width: 66%;
+            margin-right: 10px;
+            padding-left: 4px;
+            line-height: 22px;
+        }
+    }
+}
+
+
+
+
+.footer .bande.right { bottom: 0; top: inherit; }
+
+
+
+
+// quisommesnous 
+
+@import "quisommesnous.scss";
+
+
+
+// reconversionV2 
+
+@import "reconversionV2.scss";
+
+
+
+// annuaire
+
+@import "annuaire-fichecoach.scss";
+
+
+
+// lescles
+
+.lescles article {
+    padding-bottom: 50px;
+    &.last { padding-bottom: 0; }
+}
+
+
+// categorie blog
+
+.categorie .large-4 { min-height: 270px; }
+
+
+// blog
+
+@import "blog.scss";

@@ -1,0 +1,71 @@
+//------------------//
+//     Header       //
+//------------------//
+
+.header {
+    .bande {
+        height: 8px;
+        background: url('/images/bande-header.png') center center no-repeat;
+
+        &.left { width: 30%; background: none; background-color: #00afec; }
+        &.right { position: absolute; top: 0; right: 0; width: 30%; background: none; background-color: #fff02a; }
+    }
+
+    .share {
+        position: absolute;
+        right: 0;
+        top: 45px;
+        width: 30px;
+        height: 92px;
+
+        a { display: block; height: 31px; }
+
+        .twitter {   
+            background: url('/images/share-twitter.png') center center no-repeat;
+        }
+        .facebook {
+            background: url('/images/share-facebook.png') center center no-repeat;
+        }
+        .mail {
+            background: url('/images/share-mail.png') center center no-repeat;
+        }
+    }
+}
+
+.logo-header {
+    width: 445px;
+    height: 112px;
+    margin: 0 auto;
+    margin: 40px auto;
+    //background: url('/images/logo-header.png') center center no-repeat;
+
+    figure {
+        float: left;
+        width: 90px;
+        height: 112px;
+        background: url('/images/logo-cap-coherence.png') center center no-repeat;
+    }
+    
+    h1 {
+        display: inline-block;
+        margin: 26px 0 0 10px;
+        text-transform: none;
+        line-height: 28px;
+        font-weight: normal;
+        color: #575656;
+
+        span { 
+            display: block; 
+            margin-left: 9px;
+        }
+    }
+
+    h2 {
+        display: block;
+        margin-left: 112px;
+        font-size: 18px;
+        font-style: italic;
+        text-transform: none;
+        color: #575656;
+    }
+}

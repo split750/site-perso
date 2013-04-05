@@ -1,0 +1,87 @@
+//-----------------------------//
+//   Annuaire  et fiche coach  //
+//-----------------------------//
+
+.annuaire .row.border-bottom { margin-bottom: 0; padding-bottom: 0; }
+
+.card {
+    display: block;
+    @extend .presentation-coach;
+    
+    .annuaire & {
+        @extend .padding;
+        @include transition(background-color 0.5s ease-in-out);
+        text-decoration: none;
+        min-height: 269px;
+        background: url('/images/bg-card.png') center right no-repeat;
+        overflow: hidden;
+
+        &:hover, &:focus { background-color: #eee; }
+    }
+
+    .row { margin: 0; }
+
+    .title { 
+        padding-top: 0; 
+
+        h4 { line-height: 24px; margin-top: 0; }
+        h5 { font-size: 14px; line-height: 18px; color: #58595b; margin-bottom: 0; }
+
+        .chat-card, .mail-card, .tel-card {
+            float: left;
+            width: 25px;
+            height: 23px;
+            margin: 4px 6px 0 0;
+        }
+        .chat-card { background: url('/images/picto-chat-card.png') center center no-repeat; }
+        .mail-card { background: url('/images/picto-mail-card.png') center center no-repeat; }
+        .tel-card { background: url('/images/picto-tel-card.png') center center no-repeat; }
+        
+    }
+
+    p { display: inline-block; max-height: 72px; overflow: hidden; }
+}
+
+
+// ajout pour la fiche coach 
+
+.card-contact {
+    h3 { float: left; &:after { content: ' : '; }}
+    a { 
+        margin-left: 6px; 
+        font-size: 16px; 
+        text-decoration: none; 
+        color: #58595b; 
+    }
+    li { @extend .border-bottom; margin-bottom: 10px; }
+    li.last { border: none; }
+
+    .button { margin: 0; width: 100%; }
+}
+
+.fiche-coach {
+    .card {
+        .photo { 
+            width: 154px; 
+            height: 189px;
+            img { width: 152px; height: 183px; }
+        }
+        h6 { line-height: 22px; margin-bottom: 10px; }
+        ul { height: 20px; }
+        p { max-width: 68%; }
+    }
+
+    h6 { 
+        font-size: 16px; line-height: 18px; margin-bottom: 20px;
+        &.last { margin-bottom: 6px; }
+        b:before { content: ' : '; } 
+    }
+    .list-style-dash {
+        margin-top: 0;
+    li { margin: 0; }
+    }
+}
+
+
+
+

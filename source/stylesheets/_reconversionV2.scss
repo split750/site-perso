@@ -1,0 +1,25 @@
+//---------------------//
+//   ReconversionV2    //
+//---------------------//
+
+figure.schema-reconversion {
+    width: 913px;
+    height: 529px;
+    background: url('/images/schema-reconversion.png') center center no-repeat;
+}
+
+figure.image-voile1 {
+    width: 247px;
+    height: 293px;
+    margin: 10px 0 20px auto;
+    background: url('/images/image-voile1.jpg') center right no-repeat;
+}
+
+figure.large {
+    &.bell { background: url('/images/picto-bell-large.png') center center no-repeat; }
+    &.brain { background: url('/images/picto-brain-large.png') center center no-repeat; }
+    &.arrow { background: url('/images/picto-arrow-large.png') center center no-repeat; }
+    &.cine { background: url('/images/picto-cine-large.png') center center no-repeat; }
+    &.boat2 { background: url('/images/picto-boat2-large.png') center center no-repeat; }
+    &.thumb-up { background: url('/images/picto-thumb-up-large.png') center center no-repeat; }
+}
