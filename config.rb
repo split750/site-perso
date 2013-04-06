@@ -1,6 +1,11 @@
+activate :livereload
+
 ###
 # Compass
 ###
+
+
+require 'compass'
 
 # Susy grids in Compass
 # First: gem install susy
@@ -74,4 +79,5 @@ configure :build do
 
   # Or use a different image path
   # set :http_path, "/Content/images/"
+    
 end
